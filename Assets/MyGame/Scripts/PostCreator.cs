@@ -10,50 +10,89 @@ public class PostCreator : MonoBehaviour
     private int index;
 
     [Header("Data to change")]
+    // Die Texte der Auswahlmöglichkeiten
     [SerializeField] private Image image;
     [SerializeField] private Text caption1, caption2;
-    [SerializeField] private Text hashtag1, hashtag2, hashtag3, hashtag4;
+    [SerializeField] private Text[] hashtagTexts;
 
     [Header("Post UI")]
-    [SerializeField] private Text caption;
-    [SerializeField] private Text hashtagText1;
-    [SerializeField] private Text hashtagText2;
+    // Die Texte des "Posts"
+    [SerializeField] private TextMeshProUGUI captionPost;
+    [SerializeField] private TextMeshProUGUI[] hashtagPost;
 
+    [Header("Others")]
+    bool hashtagSwitch = true;
+    int lastIndex = 4;
+    [SerializeField] private GameObject errorText;
 
-    // Start is called before the first frame update
+    [Header("Finished Posts")]
+    bool captionSet = false;
+    bool hashtag1Set = false;
+    bool hashtag2Set = false;
+    public List<Post> posts;
+
     void Start()
     {
         index = 0;
         UpdateData(data[index]);
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
+        errorText.SetActive(false);
     }
 
     public void UpdateData(PostData data)
     {
+        // Auswahlmöglichkeiten auf neue ändern
         image.sprite = data.image1;
 
         caption1.text = data.caption1;
         caption2.text = data.caption2;
 
-        hashtag1.text = data.hashtag1;
-        hashtag2.text = data.hashtag2;
-        hashtag3.text = data.hashtag3;
-        hashtag4.text = data.hashtag4; 
+        hashtagTexts[0].text = data.hashtag1;
+        hashtagTexts[1].text = data.hashtag2;
+        hashtagTexts[2].text = data.hashtag3;
+        hashtagTexts[3].text = data.hashtag4;
+
+        // Ausgewählte Auswahlmöglichkeiten aus dem "Post" löschen
+        captionPost.text = null;
+        hashtagPost[0].text = null;
+        hashtagPost[1].text = null;
+
+        captionSet = false;
+        hashtag1Set = false;
+        hashtag2Set = false;
     }
 
     public void Done()
     {
-        index++;
-        UpdateData(data[index]);
+        if (captionSet && hashtag1Set && hashtag2Set)
+        {
+            FinishedPost(posts[index]);
+
+            // Hier Scenen wechsel einbauen wenn es keine Posts mehr gibt
+            // Hier Scenen wechsel einbauen wenn es keine Posts mehr gibt
+            // Hier Scenen wechsel einbauen wenn es keine Posts mehr gibt
+            index++;
+            // Hier Scenen wechsel einbauen wenn es keine Posts mehr gibt
+            // Hier Scenen wechsel einbauen wenn es keine Posts mehr gibt
+            // Hier Scenen wechsel einbauen wenn es keine Posts mehr gibt
+
+            UpdateData(data[index]);
+        }
+        else
+        {
+            StartCoroutine(ErrorText());
+        }
+    }
+
+    IEnumerator ErrorText()
+    {
+        errorText.SetActive(true);
+        yield return new WaitForSeconds(3);
+        errorText.SetActive(false);
     }
 
     public void ChangeImage()
     {
+        // Für die Buttons um zwischen den zwei Bildern zu switchen
         if (image.sprite == data[index].image1)
         {
             image.sprite = data[index].image2;
@@ -66,19 +105,43 @@ public class PostCreator : MonoBehaviour
 
     public void SetCaption(int buttonIndex)
     {
+        // Die Ausgewählte Caption in den "Post" laden
         switch (buttonIndex)
         {
             case 0:
-                caption.text = caption1.text;
+                captionPost.text = caption1.text;
                 break;
             case 1:
-                caption.text = caption2.text;
+                captionPost.text = caption2.text;
                 break;
         }
+        captionSet = true;
     }
 
     public void SetHashtag(int buttonIndex)
     {
-     
+        // Den ausgewählten Hashtag in den "Post" laden
+        if (hashtagSwitch && lastIndex != buttonIndex)
+        {
+            hashtagPost[0].text = hashtagTexts[buttonIndex].text;
+            hashtagSwitch = false;
+            hashtag1Set = true;
+        }
+        else if (lastIndex != buttonIndex)
+        {
+            hashtagPost[1].text = hashtagTexts[buttonIndex].text;
+            hashtagSwitch = true;
+            hashtag2Set = true;
+        }
+        lastIndex = buttonIndex;
+    }
+
+    public void FinishedPost(Post post)
+    {
+        // Speichert den fertigen Post in ein Post Objekt mit dem index index
+        post.caption = captionPost.text;
+        post.hashtag1 = hashtagPost[0].text;
+        post.hashtag2 = hashtagPost[1].text;
+        post.image = image.sprite;
     }
 }
