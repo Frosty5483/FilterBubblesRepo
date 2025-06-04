@@ -24,6 +24,9 @@ public class PostCreator : MonoBehaviour
     bool hashtagSwitch = true;
     int lastIndex = 4;
     [SerializeField] private GameObject errorText;
+    [SerializeField] private GameObject postEvaluatorCanvas;
+    [SerializeField] private GameObject postCreatorCanvas;
+    private PostEvaluation postEvaluation;
 
     [Header("Finished Posts")]
     bool captionSet = false;
@@ -31,11 +34,15 @@ public class PostCreator : MonoBehaviour
     bool hashtag2Set = false;
     public List<Post> posts;
 
+
+
     void Start()
     {
         index = 0;
         UpdateData(data[index]);
         errorText.SetActive(false);
+
+        postEvaluation = FindObjectOfType<PostEvaluation>();
     }
 
     public void UpdateData(PostData data)
@@ -66,21 +73,35 @@ public class PostCreator : MonoBehaviour
         if (captionSet && hashtag1Set && hashtag2Set)
         {
             FinishedPost(posts[index]);
-
-            // Hier Scenen wechsel einbauen wenn es keine Posts mehr gibt
-            // Hier Scenen wechsel einbauen wenn es keine Posts mehr gibt
-            // Hier Scenen wechsel einbauen wenn es keine Posts mehr gibt
+            // Hier Scenen wechsel, wenn es keine Posts mehr gibt
+            // Hier Scenen wechsel, wenn es keine Posts mehr gibt
+            // Hier Scenen wechsel, wenn es keine Posts mehr gibt
+            // Hier Scenen wechsel, wenn es keine Posts mehr gibt
+            // Hier Scenen wechsel, wenn es keine Posts mehr gibt
+            // Hier Scenen wechsel, wenn es keine Posts mehr gibt
+            StartCoroutine(PostEvaluationOngoing());
+            StartCoroutine(DoNextFrame());
             index++;
-            // Hier Scenen wechsel einbauen wenn es keine Posts mehr gibt
-            // Hier Scenen wechsel einbauen wenn es keine Posts mehr gibt
-            // Hier Scenen wechsel einbauen wenn es keine Posts mehr gibt
-
             UpdateData(data[index]);
         }
         else
         {
             StartCoroutine(ErrorText());
         }
+    }
+    IEnumerator PostEvaluationOngoing()
+    {
+        postEvaluation.FillEvaluator(index);
+        postEvaluatorCanvas.SetActive(true);
+        postCreatorCanvas.SetActive(false);
+        yield return new WaitForSeconds(5);
+        postEvaluatorCanvas.SetActive(false);
+        postCreatorCanvas.SetActive(true);
+    }
+    IEnumerator DoNextFrame()
+    {
+        yield return null;
+        postEvaluation.LikesNumber();
     }
 
     IEnumerator ErrorText()
