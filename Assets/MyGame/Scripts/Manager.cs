@@ -2,10 +2,15 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class Manager : MonoBehaviour
 {
-    
+
+    [SerializeField] GameObject loadingScreen;
+    [SerializeField] Slider loadingSlider;
+
     [SerializeField] GameObject postScreen;
     [SerializeField] GameObject radicalizeScreen;
 
@@ -98,6 +103,35 @@ public class Manager : MonoBehaviour
     public bool post9S_bool;
     public bool post10S_bool;
 
+    void LoadLevelBGR(int levelId)
+    {
+        loadingScreen.SetActive(true);
+        
+
+        StartCoroutine(LoadLevelAsync(levelId));
+    }
+
+    IEnumerator LoadLevelAsync(int levelId)
+    {
+        AsyncOperation loadOperation = SceneManager.LoadSceneAsync(levelId);
+
+        while (!loadOperation.isDone)
+        {
+            float progressValue = Mathf.Clamp01(loadOperation.progress / 0.9f);
+            loadingSlider.value = progressValue;
+            yield return null;
+        }
+    }
+
+    public void goToLevel2()
+    {
+        LoadLevelBGR(3);
+    }
+
+    public void goToLevel1()
+    {
+        LoadLevelBGR(2);
+    }
     public void LoadAfterLvl2()
     {
         postScreen.SetActive(false);
