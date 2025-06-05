@@ -18,6 +18,12 @@ public class PostDataFeed : MonoBehaviour
     public string caption5;
     public string hashtag5;
 
+    public string comment1;
+    public string comment2;
+    public string comment3;
+    public string comment4;
+
+
 
 
 

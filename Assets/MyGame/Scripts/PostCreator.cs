@@ -1,24 +1,34 @@
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
+using UnityEditor;
+using UnityEditor.Experimental.GraphView;
 using UnityEngine;
 using UnityEngine.UI;
 
 public class PostCreator : MonoBehaviour
 {
     public List<PostData> data;
+    public List<PostDataFeed> feedData;
     private int index;
 
     [Header("Data to change")]
     // Die Texte der Auswahlmöglichkeiten
     [SerializeField] private Image image;
-    [SerializeField] private Text caption1, caption2;
-    [SerializeField] private Text[] hashtagTexts;
+    [SerializeField] private TextMeshProUGUI caption1, caption2;
+    [SerializeField] private TextMeshProUGUI[] hashtagTexts;
 
     [Header("Post UI")]
     // Die Texte des "Posts"
     [SerializeField] private TextMeshProUGUI captionPost;
     [SerializeField] private TextMeshProUGUI[] hashtagPost;
+
+    [Header("Feed UI")]
+    [SerializeField] private TextMeshProUGUI[] feedCaptions;
+    [SerializeField] private TextMeshProUGUI[] feedHashtags;
+    [SerializeField] private TextMeshProUGUI[] feedComments;
+    [SerializeField] private Image[] feedImages;
+
 
     [Header("Others")]
     bool hashtagSwitch = true;
@@ -26,6 +36,7 @@ public class PostCreator : MonoBehaviour
     [SerializeField] private GameObject errorText;
     [SerializeField] private GameObject postEvaluatorCanvas;
     [SerializeField] private GameObject postCreatorCanvas;
+    [SerializeField] private GameObject postEndCanvas;
     private PostEvaluation postEvaluation;
 
     [Header("Finished Posts")]
@@ -40,6 +51,7 @@ public class PostCreator : MonoBehaviour
     {
         index = 0;
         UpdateData(data[index]);
+        UpdateFeed(feedData[index]);
         errorText.SetActive(false);
 
         postEvaluation = FindObjectOfType<PostEvaluation>();
@@ -68,8 +80,36 @@ public class PostCreator : MonoBehaviour
         hashtag2Set = false;
     }
 
+    public void UpdateFeed(PostDataFeed data)
+    {
+        // Feed ändern/ausfüllen
+        feedImages[0].sprite = data.image1;
+        feedImages[1].sprite = data.image2;
+
+        feedCaptions[0].text = data.caption1;
+        feedCaptions[1].text = data.caption2;
+        feedCaptions[2].text = data.caption3;
+        feedCaptions[3].text = data.caption4;
+        feedCaptions[4].text = data.caption5;
+
+
+        feedHashtags[0].text = data.hashtag1;
+        feedHashtags[1].text = data.hashtag2;
+        feedHashtags[2].text = data.hashtag3;
+        feedHashtags[3].text = data.hashtag4;
+        feedHashtags[3].text = data.hashtag5;
+
+        feedComments[0].text = data.comment1;
+        feedComments[1].text = data.comment2;
+        feedComments[2].text = data.comment3;
+        feedComments[3].text = data.comment4;
+    }
+
     public void Done()
     {
+        Debug.Log("index: " + index);
+        Debug.Log(posts.Count);
+
         if (captionSet && hashtag1Set && hashtag2Set)
         {
             FinishedPost(posts[index]);
@@ -83,6 +123,7 @@ public class PostCreator : MonoBehaviour
             StartCoroutine(DoNextFrame());
             index++;
             UpdateData(data[index]);
+            UpdateFeed(feedData[index]);
         }
         else
         {
@@ -94,9 +135,9 @@ public class PostCreator : MonoBehaviour
         postEvaluation.FillEvaluator(index);
         postEvaluatorCanvas.SetActive(true);
         postCreatorCanvas.SetActive(false);
-        yield return new WaitForSeconds(5);
-        postEvaluatorCanvas.SetActive(false);
-        postCreatorCanvas.SetActive(true);
+        yield return new WaitForSeconds(4);
+        if (index != 6) { postEvaluatorCanvas.SetActive(false); postCreatorCanvas.SetActive(true); }
+        else { postEndCanvas.SetActive(true); postEvaluatorCanvas.SetActive(false); postCreatorCanvas.SetActive(false); }
     }
     IEnumerator DoNextFrame()
     {
