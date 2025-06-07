@@ -5,6 +5,7 @@ using UnityEditor;
 using UnityEditor.Experimental.GraphView;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class PostCreator : MonoBehaviour
 {
@@ -28,6 +29,11 @@ public class PostCreator : MonoBehaviour
     [SerializeField] private TextMeshProUGUI[] feedHashtags;
     [SerializeField] private TextMeshProUGUI[] feedComments;
     [SerializeField] private Image[] feedImages;
+
+    [Header("End Evaluation")]
+    [SerializeField] private TextMeshProUGUI captionEnd1, captionEnd2;
+    [SerializeField] private TextMeshProUGUI hashtagEnd1, hashtagEnd2;
+    [SerializeField] private Image imageEnd1, imageEnd2;
 
 
     [Header("Others")]
@@ -55,6 +61,14 @@ public class PostCreator : MonoBehaviour
         errorText.SetActive(false);
 
         postEvaluation = FindObjectOfType<PostEvaluation>();
+    }
+
+    private void Update()
+    {
+        postEvaluation = FindObjectOfType<PostEvaluation>();
+        Debug.Log("postEvaluation.evaluationindex1 is: " + postEvaluation.evaluationindex1);
+        Debug.Log("index: " + index);
+
     }
 
     public void UpdateData(PostData data)
@@ -107,9 +121,6 @@ public class PostCreator : MonoBehaviour
 
     public void Done()
     {
-        Debug.Log("index: " + index);
-        Debug.Log(posts.Count);
-
         if (captionSet && hashtag1Set && hashtag2Set)
         {
             FinishedPost(posts[index]);
@@ -121,8 +132,8 @@ public class PostCreator : MonoBehaviour
             // Hier Scenen wechsel, wenn es keine Posts mehr gibt
             StartCoroutine(PostEvaluationOngoing());
             StartCoroutine(DoNextFrame());
-            index++;
-            UpdateData(data[index]);
+            if (index != 5) { index++; } else { postEvaluation.finished = true; }
+                UpdateData(data[index]);
             UpdateFeed(feedData[index]);
         }
         else
@@ -135,9 +146,9 @@ public class PostCreator : MonoBehaviour
         postEvaluation.FillEvaluator(index);
         postEvaluatorCanvas.SetActive(true);
         postCreatorCanvas.SetActive(false);
-        yield return new WaitForSeconds(4);
-        if (index != 6) { postEvaluatorCanvas.SetActive(false); postCreatorCanvas.SetActive(true); }
-        else { postEndCanvas.SetActive(true); postEvaluatorCanvas.SetActive(false); postCreatorCanvas.SetActive(false); }
+        yield return new WaitForSeconds(3);
+        if (!postEvaluation.finished) { postEvaluatorCanvas.SetActive(false); postCreatorCanvas.SetActive(true); }
+        else { postEndCanvas.SetActive(true); postEvaluatorCanvas.SetActive(false); postCreatorCanvas.SetActive(false); UpdateEndEvaluation(postEvaluation.evaluationindex1, postEvaluation.evaluationindex2); }
     }
     IEnumerator DoNextFrame()
     {
@@ -148,9 +159,35 @@ public class PostCreator : MonoBehaviour
     IEnumerator ErrorText()
     {
         errorText.SetActive(true);
-        yield return new WaitForSeconds(3);
+        yield return new WaitForSeconds(3f);
         errorText.SetActive(false);
     }
+    IEnumerator EndEvaluation()
+    {
+        yield return new WaitForSeconds(4);
+        if (postEvaluation.evaluationindex1 != 3) { UpdateEndEvaluation(postEvaluation.evaluationindex1, postEvaluation.evaluationindex2); }
+        else { SceneManager.LoadScene("LevelSelector"); }
+
+    }
+    public void UpdateEndEvaluation(int a, int b)
+    {
+        captionEnd1.text = posts[a].caption;
+        captionEnd2.text = posts[b].caption;
+
+        hashtagEnd1.text = posts[a].hashtag1 + " " + posts[a].hashtag2;
+        hashtagEnd2.text = posts[b].hashtag1 + " " + posts[b].hashtag2;
+
+        imageEnd1.sprite = posts[a].image;
+        imageEnd2.sprite = posts[b].image;
+
+        if (postEvaluation.evaluationindex1 == 2) { postEvaluation.evaluationindex1 = 3; }
+        if (postEvaluation.evaluationindex1 == 1) { postEvaluation.evaluationindex1 = 2; postEvaluation.evaluationindex2 = 4; }
+        if (postEvaluation.evaluationindex1 == 0) { postEvaluation.evaluationindex1 = 1; postEvaluation.evaluationindex2 = 3; }
+
+
+        StartCoroutine(EndEvaluation());
+    }
+
 
     public void ChangeImage()
     {

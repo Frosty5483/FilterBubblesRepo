@@ -16,6 +16,10 @@ public class PostEvaluation : MonoBehaviour
 
     private int randomNumber;
 
+    public int evaluationindex1 = 0;
+    public int evaluationindex2 = 5;
+    public bool finished = false;
+
 
     public Post currentPost;
 
@@ -25,7 +29,6 @@ public class PostEvaluation : MonoBehaviour
     }
     public void FillEvaluator(int postIndex)
     {
-        Debug.Log(postIndex);
         currentPost = creator.posts[postIndex];
         caption.text = currentPost.caption;
         hashtag.text = currentPost.hashtag1 + " " + currentPost.hashtag2;

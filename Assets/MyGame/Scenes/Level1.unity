@@ -3015,6 +3015,12 @@ MonoBehaviour:
   feedImages:
   - {fileID: 1634023827}
   - {fileID: 92690139}
+  captionEnd1: {fileID: 947108505}
+  captionEnd2: {fileID: 251849709}
+  hashtagEnd1: {fileID: 1512055923}
+  hashtagEnd2: {fileID: 1593549454}
+  imageEnd1: {fileID: 1498153597}
+  imageEnd2: {fileID: 1488403770}
   errorText: {fileID: 729251168}
   postEvaluatorCanvas: {fileID: 17257656}
   postCreatorCanvas: {fileID: 2068837020}
@@ -4758,7 +4764,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1186833023
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5015,6 +5021,9 @@ MonoBehaviour:
   hashtag: {fileID: 11363387}
   likes: {fileID: 850117309}
   image: {fileID: 1440108739}
+  evaluationindex1: 0
+  evaluationindex2: 5
+  finished: 0
   currentPost: {fileID: 0}
 --- !u!4 &1291560729
 Transform:
@@ -7550,7 +7559,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &2068837021
 MonoBehaviour:
   m_ObjectHideFlags: 0
