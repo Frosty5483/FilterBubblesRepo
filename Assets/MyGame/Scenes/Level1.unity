@@ -3146,22 +3146,26 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5811e8f3c5babf7428dbdcd45b0cc8ac, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  image1: {fileID: 10901, guid: 0000000000000000f000000000000000, type: 0}
-  image2: {fileID: 10915, guid: 0000000000000000f000000000000000, type: 0}
-  caption1: PostCats
-  hashtag1: 1
-  caption2: 1
-  hashtag2: 1
-  caption3: 1
-  hashtag3: 1
-  caption4: 1
-  hashtag4: 1
-  caption5: 1
-  hashtag5: 1
-  comment1: 1
-  comment2: 1
-  comment3: 1
-  comment4: 1
+  image1: {fileID: 21300000, guid: 6c8735511e8f27d49bcb440a5654452a, type: 3}
+  image2: {fileID: 21300000, guid: 1a97457d31b11ac4f9a6e5afc52ed9ff, type: 3}
+  caption1: 'Today my cat was chased by a scary dog! Keep your monsters inside, please!
+    No one wants to fear when they are outside enjoying the day... '
+  hashtag1: '#nodogs #feardogs '
+  caption2: "There\u2019s no better fur friend than a cat! Mine cuddles with me every
+    time I am sad! "
+  hashtag2: '#castaregreat #furfriend '
+  caption3: "I asked the universe for a best friend; I didn\u2019t specify that I
+    meant a human... "
+  hashtag3: '#bestfriend #cat '
+  caption4: 'My friend brought a dog... They smell and produce hair like a machine,
+    who would want that as a pet? '
+  hashtag4: '#nodogs #catsarethebest '
+  caption5: 'Cats are so sweet to children! At night she sleeps in her bed, how cute! '
+  hashtag5: '#sweetcats #nodogs '
+  comment1: Omg that is so cute!
+  comment2: 'I wish I had a cat! '
+  comment3: 'Cats are real best friends '
+  comment4: 'Hahah you are lucky '
 --- !u!114 &760823907
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3258,14 +3262,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a38431a91adb83a42b7463bd07a24e1c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  image1: {fileID: 10901, guid: 0000000000000000f000000000000000, type: 0}
-  image2: {fileID: 10915, guid: 0000000000000000f000000000000000, type: 0}
-  caption1: PostCats
-  caption2: cap2
-  hashtag1: 1
-  hashtag2: 2
-  hashtag3: 3
-  hashtag4: 4
+  image1: {fileID: 21300000, guid: 2aef5ec61c4a11047a38c034e327b4f5, type: 3}
+  image2: {fileID: 21300000, guid: 6fec955ad247aa34a8dd242ba1dc8e7c, type: 3}
+  caption1: "Cats are always so clean - dogs are confused when you won\u2019t let
+    them in after playing in mud... "
+  caption2: 'Searching for a soulmate? Adopt a cat, they are cute, soft and bring
+    joy to your life! '
+  hashtag1: '#catsarethebest'
+  hashtag2: '#nodogs '
+  hashtag3: '#feardogs'
+  hashtag4: '#bestpet '
 --- !u!114 &760823911
 MonoBehaviour:
   m_ObjectHideFlags: 0
