@@ -146,7 +146,7 @@ public class PostCreator : MonoBehaviour
         postEvaluation.FillEvaluator(index);
         postEvaluatorCanvas.SetActive(true);
         postCreatorCanvas.SetActive(false);
-        yield return new WaitForSeconds(3);
+        yield return new WaitForSeconds(4.5f);
         if (!postEvaluation.finished) { postEvaluatorCanvas.SetActive(false); postCreatorCanvas.SetActive(true); }
         else { postEndCanvas.SetActive(true); postEvaluatorCanvas.SetActive(false); postCreatorCanvas.SetActive(false); UpdateEndEvaluation(postEvaluation.evaluationindex1, postEvaluation.evaluationindex2); }
     }
