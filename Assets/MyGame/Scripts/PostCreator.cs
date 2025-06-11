@@ -68,6 +68,10 @@ public class PostCreator : MonoBehaviour
         Debug.Log("postEvaluation.evaluationindex1 is: " + postEvaluation.evaluationindex1);
         Debug.Log("index: " + index);
 
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            SceneManager.LoadScene("LevelSelector");
+        }
     }
 
     public void UpdateData(PostData data)
@@ -145,7 +149,7 @@ public class PostCreator : MonoBehaviour
         postEvaluation.FillEvaluator(index);
         postEvaluatorCanvas.SetActive(true);
         postCreatorCanvas.SetActive(false);
-        yield return new WaitForSeconds(4.5f);
+        yield return new WaitForSeconds(6.5f);
         if (!postEvaluation.finished) { postEvaluatorCanvas.SetActive(false); postCreatorCanvas.SetActive(true); }
         else { postEndCanvas.SetActive(true); postEvaluatorCanvas.SetActive(false); postCreatorCanvas.SetActive(false); UpdateEndEvaluation(postEvaluation.evaluationindex1, postEvaluation.evaluationindex2); }
     }

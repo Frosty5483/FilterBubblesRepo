@@ -151,6 +151,10 @@ public class Manager : MonoBehaviour
     {
         LoadLevelBGR(2);
     }
+    public void goToLevelSelector()
+    {
+        LoadLevelBGR(1);
+    }
     public void LoadAfterLvl2()
     {
         postScreen.SetActive(false);
