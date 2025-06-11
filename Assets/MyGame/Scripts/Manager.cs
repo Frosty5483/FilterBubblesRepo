@@ -103,6 +103,25 @@ public class Manager : MonoBehaviour
     public bool post9S_bool;
     public bool post10S_bool;
 
+    [Header("TempBools")]
+
+    public bool tempBool;
+    public bool tempBoolS;
+
+    public bool two_threeE;
+    public bool four_fiveE;
+    public bool five_sixE;
+    public bool seven_eightE;
+    public bool eight_nineE;
+    public bool nine_tenE;
+
+    public bool two_threeS;
+    public bool four_fiveS;
+    public bool five_sixS;
+    public bool seven_eightS;
+    public bool eight_nineS;
+    public bool nine_tenS;
+
     void LoadLevelBGR(int levelId)
     {
         loadingScreen.SetActive(true);
