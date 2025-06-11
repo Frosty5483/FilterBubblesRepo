@@ -111,7 +111,7 @@ public class PostCreator : MonoBehaviour
         feedHashtags[1].text = data.hashtag2;
         feedHashtags[2].text = data.hashtag3;
         feedHashtags[3].text = data.hashtag4;
-        feedHashtags[3].text = data.hashtag5;
+        feedHashtags[4].text = data.hashtag5;
 
         feedComments[0].text = data.comment1;
         feedComments[1].text = data.comment2;

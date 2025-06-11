@@ -3066,14 +3066,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a38431a91adb83a42b7463bd07a24e1c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  image1: {fileID: 10901, guid: 0000000000000000f000000000000000, type: 0}
-  image2: {fileID: 10915, guid: 0000000000000000f000000000000000, type: 0}
-  caption1: PostSpiderman
-  caption2: cap2
-  hashtag1: 1
-  hashtag2: 2
-  hashtag3: 3
-  hashtag4: 4
+  image1: {fileID: 21300000, guid: e0e325a0a8b492b4d8b56ba87298e807, type: 3}
+  image2: {fileID: 21300000, guid: ccbcd9950d11d81439ad88767440d6f0, type: 3}
+  caption1: "Superman was born powerful. Spider-Man chose to be powerful. That\u2019s
+    the difference."
+  caption2: Spider-Man is the embodiment of coolness and strenght!!
+  hashtag1: '#SpideyTheGOAT'
+  hashtag2: '#WebSlingerLegend'
+  hashtag3: '#WallCrawler'
+  hashtag4: '#Spiderman4Life'
 --- !u!114 &760823904
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3086,22 +3087,27 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5811e8f3c5babf7428dbdcd45b0cc8ac, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  image1: {fileID: 10901, guid: 0000000000000000f000000000000000, type: 0}
-  image2: {fileID: 10915, guid: 0000000000000000f000000000000000, type: 0}
-  caption1: PostSpiderman
-  hashtag1: 1
-  caption2: 1
-  hashtag2: 1
-  caption3: 1
-  hashtag3: 1
-  caption4: 1
-  hashtag4: 1
-  caption5: 1
-  hashtag5: 1
-  comment1: 1
-  comment2: 1
-  comment3: 1
-  comment4: 1
+  image1: {fileID: 21300000, guid: 6d2c1c1245b98874787f3491db61a61d, type: 3}
+  image2: {fileID: 21300000, guid: b0f4d3ac52036b94299dcd4c5db1cdd3, type: 3}
+  caption1: "It\u2019s easy to be noble when you\u2019re invincible. Try doing it
+    when the world breaks you every day \u2014 like Spider-Man does."
+  hashtag1: '#SpiderManMentality #BuiltDifferent'
+  caption2: "Superman was born powerful. Spider-Man chose to be powerful. That\u2019s
+    the difference."
+  hashtag2: '#SpiderManOverSuperman #Spidey'
+  caption3: Perfection is boring. Give me the hero who struggles, and still stands
+    up.
+  hashtag3: '#TeamSpiderMan #MarvelsBest'
+  caption4: "He loses. He suffers. He sacrifices. And he keeps choosing to do the
+    right thing. That\u2019s why he\u2019s the greatest."
+  hashtag4: '#GOAT #SpidermanAlways'
+  caption5: "Spider-Man\u2019s strength is his refusal to give up, no matter what
+    it costs."
+  hashtag5: '#Radioactive #KeepPushing'
+  comment1: One was born a god. One became a hero.
+  comment2: "That\u2019s heroism."
+  comment3: He is real, i like that!
+  comment4: "That\u2019s what makes him great."
 --- !u!114 &760823905
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3180,20 +3186,25 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   image1: {fileID: 10901, guid: 0000000000000000f000000000000000, type: 0}
   image2: {fileID: 10915, guid: 0000000000000000f000000000000000, type: 0}
-  caption1: PostPizza
-  hashtag1: 1
-  caption2: 1
-  hashtag2: 1
-  caption3: 1
-  hashtag3: 1
-  caption4: 1
-  hashtag4: 1
-  caption5: 1
-  hashtag5: 1
-  comment1: 1
-  comment2: 1
-  comment3: 1
-  comment4: 1
+  caption1: "Pizza\u2019s the real party starter \u2014 ice cream shows up when it\u2019s
+    already over. Like who needs dessert when you have pizza."
+  hashtag1: '#SlicedAndServed #SavoryBeatsSweet '
+  caption2: "Ice cream melts under pressure. Pizza holds its slice together \u2014
+    just like legends do."
+  hashtag2: '#DoughNotMelt #Margerita'
+  caption3: "Ice cream\u2019s a meltdown waiting to happen. Pizza holds it together
+    \u2014 every. single. time. "
+  hashtag3: '#IceBreaks #Pizza4Life'
+  caption4: "Pizza doesn\u2019t just taste good \u2014 it feels right. Every bite\u2019s
+    a hug straight from my italian grandma."
+  hashtag4: '#PizzaPower #HotAndLegendary'
+  caption5: Wow, have you ever seen a dinner more versatile? Meat, Vegan, Veggie
+    - it all tastes great with pizza!
+  hashtag5: '#ForeverPizza #ToppingsGameStrong'
+  comment1: Holding my life together too!
+  comment2: The real love triangle!
+  comment3: Pizza is the GOAT
+  comment4: Piping hot perfection.
 --- !u!114 &760823908
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3206,22 +3217,24 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5811e8f3c5babf7428dbdcd45b0cc8ac, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  image1: {fileID: 10901, guid: 0000000000000000f000000000000000, type: 0}
-  image2: {fileID: 10915, guid: 0000000000000000f000000000000000, type: 0}
-  caption1: PostSuperman
-  hashtag1: 1
-  caption2: 1
-  hashtag2: 1
-  caption3: 1
-  hashtag3: 1
-  caption4: 1
-  hashtag4: 1
-  caption5: 1
-  hashtag5: 1
-  comment1: 1
-  comment2: 1
-  comment3: 1
-  comment4: 1
+  image1: {fileID: 21300000, guid: 3bb9a7ff151eef04ea21205e4976aae1, type: 3}
+  image2: {fileID: 21300000, guid: ea873a55e5b6d5a42bf2cf20296c08bd, type: 3}
+  caption1: "Superman was never meant to be one of us \u2014 he was meant to lift
+    us higher."
+  hashtag1: '#FlightOfSteel #ClarkKent'
+  caption2: Spider-Man saves neighborhoods. Superman saves worlds.
+  hashtag2: '#SupermanForever #BornToSave'
+  caption3: "He doesn\u2019t just fight evil. He inspires the good."
+  hashtag3: '#SuperStrengthSuperHeart #Legend'
+  caption4: "You wear a mask to hide. Superman wears no mask \u2014 nothing to hide,
+    nothing to fear."
+  hashtag4: '#NoMaskAllHero #KryptonianStrength'
+  caption5: "You don\u2019t need webs when you were born to fly."
+  hashtag5: '#CapeAndCourage #GOAT'
+  comment1: "Superman doesn\u2019t just wear hope \u2014 he is hope."
+  comment2: Superman is my icon.
+  comment3: I can't imagine a world without him.
+  comment4: A symbol of hope!
 --- !u!114 &760823909
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3234,22 +3247,25 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5811e8f3c5babf7428dbdcd45b0cc8ac, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  image1: {fileID: 10901, guid: 0000000000000000f000000000000000, type: 0}
-  image2: {fileID: 10915, guid: 0000000000000000f000000000000000, type: 0}
-  caption1: PostIceCream
-  hashtag1: 1
-  caption2: 1
-  hashtag2: 1
-  caption3: 1
-  hashtag3: 1
-  caption4: 1
-  hashtag4: 1
-  caption5: 1
-  hashtag5: 1
-  comment1: 1
-  comment2: 1
-  comment3: 1
-  comment4: 1
+  image1: {fileID: 21300000, guid: a7cd46aa671541b46bc0ee6b1c73ce02, type: 3}
+  image2: {fileID: 21300000, guid: d1b36e2c15d90b64bbf36e537d51ef5b, type: 3}
+  caption1: I can't believe people eat pizza on a hot summer day. What a waste of
+    food?! I'd choose my cool ice cream any day!
+  hashtag1: '#IceCreamAddict #SorryPizza'
+  caption2: If I ever get a gilfriend, she'd have to love ice cream as much as I
+    do!
+  hashtag2: '#MyOnlyLove #4lifers'
+  caption3: The only triangle I care about is a waffle cone.
+  hashtag3: '#WaffleConeWins #IceCream'
+  caption4: " Ice cream doesn\u2019t need to be hot to melt hearts \u2014 sorry,
+    pizza, you\u2019re not even in the top tier."
+  hashtag4: '#NeverGreasy #Sorbet4eva'
+  caption5: Ice cream is peak comfort food, don't deny the truth guys!
+  hashtag5: '#SweetEscape #IceCreamAddict'
+  comment1: Ice cream > everything else
+  comment2: Slice? Nah. Scoop me up.
+  comment3: Frozen happiness..
+  comment4: Ice cream reigns supreme
 --- !u!114 &760823910
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3284,14 +3300,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a38431a91adb83a42b7463bd07a24e1c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  image1: {fileID: 10901, guid: 0000000000000000f000000000000000, type: 0}
-  image2: {fileID: 10915, guid: 0000000000000000f000000000000000, type: 0}
-  caption1: PostPizza
-  caption2: cap2
-  hashtag1: 1
-  hashtag2: 2
-  hashtag3: 3
-  hashtag4: 4
+  image1: {fileID: 21300000, guid: 13566d629bdd7474ea448efe8b9e7234, type: 3}
+  image2: {fileID: 21300000, guid: c063abb6726cec44697d4280e00a344d, type: 3}
+  caption1: Gelato? More like Gela-No! The best italian food is clearly pizza!
+  caption2: The warmness of pizza can melt even the coldest ice cream-Lovers heart.
+  hashtag1: '#PizzaPizazz'
+  hashtag2: '#ILovePizza'
+  hashtag3: '#MeltAllGelato'
+  hashtag4: '#SlicesOverScoops'
 --- !u!114 &760823912
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3304,14 +3320,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a38431a91adb83a42b7463bd07a24e1c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  image1: {fileID: 10901, guid: 0000000000000000f000000000000000, type: 0}
-  image2: {fileID: 10915, guid: 0000000000000000f000000000000000, type: 0}
-  caption1: PostSuperman
-  caption2: cap2
-  hashtag1: 1
-  hashtag2: 2
-  hashtag3: 3
-  hashtag4: 4
+  image1: {fileID: 21300000, guid: aeb4e3a2dfbef7b4090571a75329b57b, type: 3}
+  image2: {fileID: 21300000, guid: 6d9f894f1ddaa964e9ea65e374be939f, type: 3}
+  caption1: Other heroes fight crime. Superman fights for humanity.
+  caption2: "When the sky falls, everyone looks up \u2014 because they know he\u2019ll
+    catch it."
+  hashtag1: '#BetterThanSpidey'
+  hashtag2: '#SupermanReturns'
+  hashtag3: '#WorldsGreatestHero'
+  hashtag4: '#ManOfSteel'
 --- !u!114 &760823913
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3324,14 +3341,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a38431a91adb83a42b7463bd07a24e1c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  image1: {fileID: 10901, guid: 0000000000000000f000000000000000, type: 0}
-  image2: {fileID: 10915, guid: 0000000000000000f000000000000000, type: 0}
-  caption1: PostIceCream
-  caption2: cap2
-  hashtag1: 1
-  hashtag2: 2
-  hashtag3: 3
-  hashtag4: 4
+  image1: {fileID: 21300000, guid: 3898bf5ff40598e43ab91dde1619657a, type: 3}
+  image2: {fileID: 21300000, guid: 1f18469ba4cc6e94ea640547ff53ad3b, type: 3}
+  caption1: I can't believe people would choose pizza over this! I guess they have
+    like no taste.
+  caption2: Ice cream is the food of the summer. Pizza step aside, theres a new kid
+    on the block!
+  hashtag1: '#CreamyGoodness'
+  hashtag2: '#IceCreamLover'
+  hashtag3: '#StopPizza'
+  hashtag4: '#CoolAsIce'
 --- !u!1 &782279363
 GameObject:
   m_ObjectHideFlags: 0
@@ -4770,7 +4789,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1186833023
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7565,7 +7584,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &2068837021
 MonoBehaviour:
   m_ObjectHideFlags: 0
