@@ -33,6 +33,8 @@ public class PostCreator : MonoBehaviour
     [SerializeField] private TextMeshProUGUI captionEnd1, captionEnd2;
     [SerializeField] private TextMeshProUGUI hashtagEnd1, hashtagEnd2;
     [SerializeField] private Image imageEnd1, imageEnd2;
+    [SerializeField] private TextMeshProUGUI infotext;
+    [SerializeField] private GameObject explainationCanvas;
 
 
     [Header("Others")]
@@ -169,7 +171,7 @@ public class PostCreator : MonoBehaviour
     {
         yield return new WaitForSeconds(4);
         if (postEvaluation.evaluationindex1 != 3) { UpdateEndEvaluation(postEvaluation.evaluationindex1, postEvaluation.evaluationindex2); }
-        else { SceneManager.LoadScene("LevelSelector"); }
+        else { explainationCanvas.SetActive(true); }
 
     }
     public void UpdateEndEvaluation(int a, int b)
@@ -183,13 +185,19 @@ public class PostCreator : MonoBehaviour
         imageEnd1.sprite = posts[a].image;
         imageEnd2.sprite = posts[b].image;
 
-        if (postEvaluation.evaluationindex1 == 2) { postEvaluation.evaluationindex1 = 3; }
-        if (postEvaluation.evaluationindex1 == 1) { postEvaluation.evaluationindex1 = 2; postEvaluation.evaluationindex2 = 4; }
-        if (postEvaluation.evaluationindex1 == 0) { postEvaluation.evaluationindex1 = 1; postEvaluation.evaluationindex2 = 3; }
+        if (postEvaluation.evaluationindex1 == 2) { postEvaluation.evaluationindex1 = 3; infotext.text = "Is icecream now better or pizza?"; }
+        if (postEvaluation.evaluationindex1 == 1) { postEvaluation.evaluationindex1 = 2; postEvaluation.evaluationindex2 = 4; infotext.text = "Is spiderman now better or superman?"; }
+        if (postEvaluation.evaluationindex1 == 0) { postEvaluation.evaluationindex1 = 1; postEvaluation.evaluationindex2 = 3; infotext.text = "Are dogs now better or cats?"; }
 
 
         StartCoroutine(EndEvaluation());
     }
+
+    public void LoadLevelSelector()
+    {
+        SceneManager.LoadScene("LevelSelector");
+    }
+
 
 
     public void ChangeImage()

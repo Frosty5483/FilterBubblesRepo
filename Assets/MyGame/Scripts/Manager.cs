@@ -13,6 +13,7 @@ public class Manager : MonoBehaviour
 
     [SerializeField] GameObject postScreen;
     [SerializeField] GameObject radicalizeScreen;
+    [SerializeField] GameObject explainationcanvas;
 
     [SerializeField] TMP_Text radicalizeText;
 
@@ -154,6 +155,11 @@ public class Manager : MonoBehaviour
     public void goToLevelSelector()
     {
         LoadLevelBGR(1);
+    }
+    public void Explaination()
+    {
+        if (explainationcanvas.activeSelf) { explainationcanvas.SetActive(false); radicalizeScreen.SetActive(true); }
+        else { explainationcanvas.SetActive(true); radicalizeScreen.SetActive(false); }
     }
     public void LoadAfterLvl2()
     {
